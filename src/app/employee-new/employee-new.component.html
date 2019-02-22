@@ -1,0 +1,9 @@
+<label>Nome:</label>
+<!--Faz com que ela seja alterada em tempo real-->
+<input type="text" [(ngModel)]="name" >
+
+<!--$event traz as informações do evento relativo ao clique do mouse-->
+<!--"click" equivale ao onclick-->
+<button type="button" (click)="addEmployee($event)">Inserir Funcionário</button>
+
+
