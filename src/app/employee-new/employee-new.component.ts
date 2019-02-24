@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { callbackify } from 'util';
 import { bindCallback, from } from 'rxjs';
-import { setTimeout } from 'timers';
+import employee from '../employee'
+import employees from '../employee';
 
 
 // Data binding
@@ -12,17 +13,19 @@ import { setTimeout } from 'timers';
 })
 export class EmployeeNewComponent implements OnInit {
 
-  name = " Danilo Cardoso";
-  employee = [];
+  name = "";
+  salario = 0;
+  
+  employee = employees;
 
   constructor() {
-    this.name = "Testando";
+    
   }
 
   addEmployee(event) {
     //imprimi as informações do evento
     console.log(event);
-    this.employee.push(this.name);
+    this.employee.push({name: this.name, salario: this.salario });
     console.log(this.employee);
 
   }
