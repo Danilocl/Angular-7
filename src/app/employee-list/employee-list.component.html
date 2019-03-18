@@ -2,14 +2,16 @@
 <table>
   <thead>
     <tr>
-      <th>Nome: </th>            
+      <th>Nome: </th>
       <th>Salário:</th>
-    </tr>    
+    </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let employee of employees_">
-      <td>{{employee.name}}</td>
-      <td>{{employee.salario}}</td>
+    <tr *ngFor="let employee of employees_; let i=index;" [id]="'tr' + i">
+      <td>[innerHtml]="employee.name"</td>
+      <td>[innerHtml]="employee.salario"
+        [ngClass]="{'salary-expensive': employee.salario > 2000, 'salary-cheap': employee.salario < 2000}"
+      </td>
     </tr>
   </tbody>
 </table>
